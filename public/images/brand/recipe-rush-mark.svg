@@ -1,0 +1,7 @@
+<svg width="440" height="180" viewBox="0 0 440 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="440" height="180" rx="32" fill="#F7E8D3"/>
+  <rect x="12" y="12" width="416" height="156" rx="26" fill="#FFF8EE" stroke="#D8B596" stroke-width="2"/>
+  <text x="52" y="92" fill="#8B3A25" font-family="Georgia, serif" font-size="60" font-weight="700">RecipeRush</text>
+  <text x="54" y="126" fill="#7A6657" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">PREMIUM BOARD GAME • COMING SOON</text>
+  <path d="M358 44L364.518 57.1799L379.058 59.2918L368.529 69.5582L371.015 84.0418L358 77.1999L344.985 84.0418L347.471 69.5582L336.942 59.2918L351.482 57.1799L358 44Z" fill="#D28B27"/>
+</svg>

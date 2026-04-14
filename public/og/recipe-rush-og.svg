@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F5E8D5"/>
+  <circle cx="1012" cy="112" r="178" fill="#F3C487" fill-opacity="0.38"/>
+  <circle cx="162" cy="528" r="186" fill="#C87954" fill-opacity="0.12"/>
+  <rect x="56" y="56" width="1088" height="518" rx="38" fill="#FFF8EE" stroke="#D8B596" stroke-width="2"/>
+  <rect x="688" y="114" width="332" height="410" rx="28" fill="#8B3A25"/>
+  <rect x="706" y="132" width="296" height="374" rx="24" fill="#F7E9D7"/>
+  <rect x="754" y="218" width="200" height="200" rx="32" fill="url(#paint0_radial_205_11)"/>
+  <text x="128" y="190" fill="#8B3A25" font-family="Georgia, serif" font-size="82" font-weight="700">RecipeRush</text>
+  <text x="128" y="252" fill="#7A6657" font-family="Arial, sans-serif" font-size="26" letter-spacing="6">BOARD GAME • COMING SOON</text>
+  <text x="128" y="350" fill="#433126" font-family="Arial, sans-serif" font-size="40">A premium cooking board game from Switzerland,</text>
+  <text x="128" y="402" fill="#433126" font-family="Arial, sans-serif" font-size="40">designed to feel tactile, elegant, and memorable.</text>
+  <rect x="128" y="450" width="276" height="58" rx="29" fill="#8B3A25"/>
+  <text x="171" y="487" fill="#FFF7EE" font-family="Arial, sans-serif" font-size="24" font-weight="700">www.reciperush.ch</text>
+  <defs>
+    <radialGradient id="paint0_radial_205_11" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(854 246) rotate(90) scale(222)">
+      <stop stop-color="#FFD9A2"/>
+      <stop offset="1" stop-color="#D18646" stop-opacity="0.18"/>
+    </radialGradient>
+  </defs>
+</svg>
