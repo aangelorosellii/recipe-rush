@@ -38,9 +38,23 @@ html {
 body {
   @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased;
   background-image:
-    radial-gradient(circle at top, rgba(255, 213, 153, 0.22), transparent 26%),
-    radial-gradient(circle at 20% 20%, rgba(144, 91, 61, 0.08), transparent 28%),
-    linear-gradient(180deg, rgba(255, 252, 247, 0.95), rgba(246, 238, 226, 0.96));
+    radial-gradient(circle at top, rgba(255, 185, 87, 0.22), transparent 24%),
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(236, 104, 38, 0.14),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(255, 142, 51, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 248, 238, 0.98),
+      rgba(247, 236, 220, 0.96)
+    );
+  background-attachment: fixed;
 }
 
 ::selection {
@@ -72,10 +86,69 @@ body {
 }
 
 @layer utilities {
+  .bg-hero-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 203, 109, 0.95),
+      rgba(246, 126, 45, 0.58) 38%,
+      rgba(182, 62, 29, 0.12) 68%,
+      transparent 78%
+    );
+    filter: blur(10px);
+  }
+
+  .bg-hero-rays {
+    background: conic-gradient(
+      from 0deg,
+      rgba(255, 190, 83, 0.36) 0deg,
+      rgba(255, 190, 83, 0.08) 18deg,
+      rgba(255, 126, 41, 0.24) 36deg,
+      rgba(255, 195, 96, 0.08) 54deg,
+      rgba(255, 167, 64, 0.3) 72deg,
+      rgba(255, 190, 83, 0.08) 90deg,
+      rgba(255, 126, 41, 0.24) 108deg,
+      rgba(255, 190, 83, 0.08) 126deg,
+      rgba(255, 167, 64, 0.3) 144deg,
+      rgba(255, 190, 83, 0.08) 162deg,
+      rgba(255, 126, 41, 0.24) 180deg,
+      rgba(255, 190, 83, 0.08) 198deg,
+      rgba(255, 167, 64, 0.3) 216deg,
+      rgba(255, 190, 83, 0.08) 234deg,
+      rgba(255, 126, 41, 0.24) 252deg,
+      rgba(255, 190, 83, 0.08) 270deg,
+      rgba(255, 167, 64, 0.3) 288deg,
+      rgba(255, 190, 83, 0.08) 306deg,
+      rgba(255, 126, 41, 0.24) 324deg,
+      rgba(255, 190, 83, 0.08) 342deg,
+      rgba(255, 190, 83, 0.36) 360deg
+    );
+    mix-blend-mode: screen;
+    opacity: 0.7;
+  }
+
+  .bg-hero-orb {
+    background: radial-gradient(
+      circle at 35% 35%,
+      rgba(255, 241, 205, 0.95),
+      rgba(255, 182, 80, 0.74) 30%,
+      rgba(239, 108, 41, 0.28) 58%,
+      transparent 72%
+    );
+    filter: blur(2px);
+  }
+
   .bg-paper {
     background:
-      linear-gradient(180deg, rgba(255, 251, 244, 0.96), rgba(247, 238, 224, 0.95)),
-      radial-gradient(circle at top left, rgba(255, 218, 171, 0.2), transparent 28%);
+      linear-gradient(
+        180deg,
+        rgba(255, 251, 244, 0.96),
+        rgba(247, 238, 224, 0.95)
+      ),
+      radial-gradient(
+        circle at top left,
+        rgba(255, 218, 171, 0.2),
+        transparent 28%
+      );
   }
 
   .shadow-soft {
@@ -101,9 +174,64 @@ body {
     inset: 0;
     background-image:
       linear-gradient(transparent, rgba(114, 77, 51, 0.02)),
-      radial-gradient(circle at 20% 20%, rgba(130, 95, 67, 0.05), transparent 30%);
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(130, 95, 67, 0.05),
+        transparent 30%
+      );
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: -1;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+  }
+
+  .animate-pulse-amber {
+    animation: pulse-amber 9s ease-in-out infinite;
+  }
+
+  .animate-spin-slower {
+    animation: spin-slower 34s linear infinite;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+}
+
+@keyframes pulse-amber {
+  0%,
+  100% {
+    opacity: 0.48;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes spin-slower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-pulse-amber,
+  .animate-spin-slower {
+    animation: none;
   }
 }

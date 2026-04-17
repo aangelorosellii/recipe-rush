@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDownRight, MessageCircle, PhoneCall } from "lucide-react";
@@ -33,7 +34,13 @@ const floatingCards = [
 
 export function HomeHero() {
   return (
-    <section id="home" className="relative py-12 sm:py-16 lg:py-24">
+    <section
+      id="home"
+      className="relative overflow-hidden py-12 sm:py-16 lg:py-24"
+    >
+      <div className="pointer-events-none absolute inset-x-0 top-[-12rem] h-[32rem] bg-[radial-gradient(circle_at_top,rgba(255,175,74,0.34),transparent_62%)]" />
+      <div className="bg-hero-glow animate-pulse-amber pointer-events-none absolute right-[-8rem] top-20 h-[24rem] w-[24rem] rounded-full opacity-70" />
+      <div className="pointer-events-none absolute left-[-6rem] top-32 h-[18rem] w-[18rem] rounded-full bg-[radial-gradient(circle,rgba(255,190,83,0.22),transparent_68%)] blur-2xl" />
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-2xl">
@@ -50,14 +57,19 @@ export function HomeHero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className={cn(buttonVariants({ size: "lg" }))}>
+              <Link
+                href="/contact"
+                className={cn(buttonVariants({ size: "lg" }))}
+              >
                 {siteConfig.hero.ctaPrimary}
               </Link>
               <Link
                 href={siteConfig.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className={cn(buttonVariants({ size: "lg", variant: "secondary" }))}
+                className={cn(
+                  buttonVariants({ size: "lg", variant: "secondary" }),
+                )}
               >
                 <MessageCircle size={16} />
                 {siteConfig.hero.ctaSecondary}
@@ -113,33 +125,25 @@ export function HomeHero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-2xl">
-            <PaperPanel className="relative overflow-hidden px-6 py-8 sm:px-8 sm:py-10">
+            <PaperPanel className="relative overflow-hidden px-5 py-5 sm:px-6 sm:py-6">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(214,126,67,0.14),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(109,135,69,0.12),transparent_28%)]" />
+              <div className="bg-hero-rays animate-spin-slower pointer-events-none absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+              <div className="bg-hero-glow animate-pulse-amber pointer-events-none absolute left-1/2 top-[48%] h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+              <div className="bg-hero-orb animate-float-slow pointer-events-none absolute right-10 top-10 h-28 w-28 rounded-full opacity-90" />
+              <div className="bg-hero-orb animate-float-slow pointer-events-none absolute bottom-14 left-10 h-20 w-20 rounded-full opacity-60 [animation-delay:2s]" />
 
-              <div className="relative z-10 mx-auto max-w-md rounded-[32px] border border-[#c79e7f]/80 bg-[linear-gradient(180deg,#8d321f_0%,#b44a2f_18%,#f2d6b2_18%,#f6ead5_100%)] p-3 shadow-card">
-                <div className="rounded-[26px] border border-white/30 bg-[linear-gradient(180deg,rgba(255,250,241,0.92),rgba(239,222,198,0.94))] px-6 py-8 text-center">
-                  <span className="inline-flex rounded-full border border-[#c9a687] bg-white/60 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-[#8a442d]">
-                    Coming Soon
-                  </span>
-                  <h2 className="mt-5 font-serif text-5xl leading-none text-[#6f2f1e] sm:text-6xl">
-                    RecipeRush
-                  </h2>
-                  <p className="mx-auto mt-4 max-w-xs text-sm text-[#6d5545]">
-                    A premium tabletop concept where ingredients, recipes, and stars
-                    turn every round into a warm strategic race.
-                  </p>
-                  <div className="mt-8 grid grid-cols-2 gap-3 text-left text-sm">
-                    <div className="rounded-2xl border border-[#d1b398] bg-white/55 p-4">
-                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8f5f3e]">
-                        Mood
-                      </span>
-                      <p className="mt-2 text-[#573c2f]">Recipe book meets collectible board game.</p>
-                    </div>
-                    <div className="rounded-2xl border border-[#d1b398] bg-white/55 p-4">
-                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8f5f3e]">
-                        Status
-                      </span>
-                      <p className="mt-2 text-[#573c2f]">Early conversations and partnerships open.</p>
+              <div className="relative z-10">
+                <div className="rounded-[34px] border border-[#c78d54]/60 bg-[linear-gradient(180deg,rgba(155,58,23,0.94),rgba(110,34,20,0.82))] p-3 shadow-card">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white/20 bg-[#5c2117]">
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src="/images/cover-assets/recipe-rush-cover.png"
+                        alt="RecipeRush illustrated cover with chef, trophy, coins, and dishes."
+                        fill
+                        priority
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 42vw, 90vw"
+                      />
                     </div>
                   </div>
                 </div>
@@ -152,12 +156,17 @@ export function HomeHero() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, delay: index * 0.12 + 0.18 }}
                   className={cn(
-                    "absolute hidden w-48 rounded-[24px] border border-[rgba(176,130,99,0.7)] bg-[linear-gradient(180deg,rgba(255,248,238,0.97),rgba(245,233,214,0.95))] p-4 shadow-soft md:block",
+                    "shadow-soft absolute hidden w-48 rounded-[24px] border border-[rgba(176,130,99,0.7)] bg-[linear-gradient(180deg,rgba(255,248,238,0.97),rgba(245,233,214,0.95))] p-4 xl:block",
                     card.className,
                   )}
                 >
                   <div className="rounded-[18px] border border-[rgba(173,129,95,0.5)] bg-white/35 px-3 py-5 text-center">
-                    <span className={cn("text-xs font-semibold uppercase tracking-[0.22em]", card.accent)}>
+                    <span
+                      className={cn(
+                        "text-xs font-semibold uppercase tracking-[0.22em]",
+                        card.accent,
+                      )}
+                    >
                       {card.title}
                     </span>
                     <div className="mx-auto my-4 h-16 w-16 rounded-[20px] border border-[rgba(173,129,95,0.45)] bg-[radial-gradient(circle_at_top,rgba(255,215,159,0.65),rgba(193,123,72,0.18))]" />
